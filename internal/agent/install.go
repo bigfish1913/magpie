@@ -94,6 +94,10 @@ var vendorInstall = map[string]func(goos string) []InstallCmd{
 		}
 		return []InstallCmd{{Via: "brew", Command: "brew install gemini-cli"}}
 	},
+	// rpi is distributed as the rpi-cli Cargo package.
+	"rpi": func(string) []InstallCmd {
+		return []InstallCmd{{Via: "cargo", Command: "cargo install rpi-cli"}}
+	},
 }
 
 // installCommands is how to install the agent with the given id on goos:

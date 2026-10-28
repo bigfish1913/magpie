@@ -331,6 +331,16 @@ var wslKinds = []wslKind{
 			}
 			return nil
 		}},
+	// rpi is Pi-compatible, but keeps its own ~/.rpi/agent tree.
+	{id: "rpi", name: "rpi", dir: ".rpi", bin: "rpi", in: rpiIn, version: true,
+		asleep: func(key string) func(map[string]string) []Option {
+			if key == "model" {
+				return func(cur map[string]string) []Option {
+					return append(ownOptions("", cur["model"]), viaMagpie("rpi", magpieID+"/")...)
+				}
+			}
+			return nil
+		}},
 	// OmO, a fork of Pi, at its default folder: the distro's variables
 	// that move it aren't read
 	{id: "omo", name: "OmO", dir: ".omo", bin: "omo", in: omoIn,

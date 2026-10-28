@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="rpi">
+  <rect width="24" height="24" rx="4" fill="#101113"/>
+  <g transform="translate(4.5 4)">
+    <rect x="0" y="5" width="3.5" height="11" rx="0.7" fill="#f4f1e9" opacity=".55"/>
+    <rect x="5.75" y="0" width="3.5" height="16" rx="0.7" fill="#ec6b38"/>
+    <rect x="11.5" y="8" width="3.5" height="8" rx="0.7" fill="#f4f1e9" opacity=".45"/>
+  </g>
+</svg>

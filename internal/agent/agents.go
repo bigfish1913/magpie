@@ -163,6 +163,7 @@ func onMachine(home, cfg string) []*Agent {
 		mimocode(home, cfg),
 		deveco(home, cfg),
 		pi(home),
+		rpi(home),
 		stepcode(home),
 		mothx(home),
 		penguin(home),
@@ -1074,6 +1075,16 @@ func piIn(at place) *Agent {
 	return a
 }
 
+// rpi is the Rust Pi-compatible agent. It keeps Pi's settings.json and
+// models.json shape, but has its own config root and User-Agent.
+func rpi(home string) *Agent { return rpiIn(here(home)) }
+
+func rpiIn(at place) *Agent {
+	a := piLike(at, "rpi", "rpi", rpiDir(at))
+	a.UA = []string{"rpi"}
+	return a
+}
+
 // piDir is Pi's agent folder at a place: PI_CODING_AGENT_DIR's when set,
 // "~" in it standing for home, else ~/.pi/agent (config.js, getAgentDir).
 // A relative one is Pi's working directory's, which magpie can't know, so
@@ -1085,6 +1096,17 @@ func piDir(at place) string {
 		}
 	}
 	return filepath.Join(at.home, ".pi", "agent")
+}
+
+// rpiDir is rpi's agent folder at a place: RPI_CODING_AGENT_DIR's when set,
+// with the same home-relative expansion rules as Pi, else ~/.rpi/agent.
+func rpiDir(at place) string {
+	if at.spell == nil {
+		if d := homeDir(at.home, appdir.Getenv("RPI_CODING_AGENT_DIR")); d != "" {
+			return d
+		}
+	}
+	return filepath.Join(at.home, ".rpi", "agent")
 }
 
 // homeDir is the folder an agent's variable names, "~" and "~/…" expanded

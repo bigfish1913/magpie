@@ -154,6 +154,7 @@ func TestPiEnabledModelsFollowRename(t *testing.T) {
 		a   func(string) *Agent
 	}{
 		{"pi", []string{".pi", "agent"}, pi},
+		{"rpi", []string{".rpi", "agent"}, rpi},
 		{"omo", []string{".omo", "agent"}, omo},
 		{"prime-agent", []string{".prime", "agent"}, primeAgent},
 	} {

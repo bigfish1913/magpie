@@ -21,6 +21,7 @@ func TestAgentOf(t *testing.T) {
 		"deepseek-harness/0.3.1":                   "dsh",
 		"dsh":                                      "dsh", // a record kept by an id already
 		"pi":                                       "pi",
+		"rpi/0.11.0":                               "rpi",
 		"grok-pager/0.2.1":                         "grok",
 		"ZCode/3.10.1":                             "zcode",
 		"Alma/1.2.0":                               "alma",

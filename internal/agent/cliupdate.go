@@ -153,7 +153,8 @@ var cliSpecs = map[string]cliSpec{
 			}
 			return nil
 		}},
-	"pi": {npm: []string{"@earendil-works/pi-coding-agent", "@mariozechner/pi-coding-agent"}, brew: []string{"pi-coding-agent"}},
+	"pi":  {npm: []string{"@earendil-works/pi-coding-agent", "@mariozechner/pi-coding-agent"}, brew: []string{"pi-coding-agent"}},
+	"rpi": {},
 	// omp: bun's global, or omp.sh's -Binary install, a binary of its own
 	// in ~/.local/bin (install, PI_INSTALL_DIR aside) or
 	// %LOCALAPPDATA%\omp (install.ps1), which omp update replaces with
